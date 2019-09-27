@@ -1,0 +1,131 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>4 Op Een Rij!</title>
+    <meta name="description" content="4 op een rij spel">
+    <meta name="author" content="Sander">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="text-center">4 Op Een Rij</h1>
+            <hr>
+            <h2 class="text-center">door Sander</h2>
+        </div>
+        <div class="row">
+            <div class="col col-sm">
+                <p id="player">Player1</p>
+            </div>
+        
+            <div class="col col-sm">
+                <button onclick="restart()">Restart</button>
+            </div>
+
+            <div class="col col-sm">
+                <button data-toggle="tooltip" data-placement="left" title="Links staat de Speler die aan de beurt is met zijn kleur. 4 op een rij kan zowel horizontaal,verticaal als diagonaal worden behaald. Met de restart button kan het spel teruggezet worden op de beginwaarden. De speler die aan de beurt is kan zijn beurt innen door op een van de 'c0, c1 ,c2 etc.' knoppen te klikken. Deze knoppen zullen disabled worden wanneer een van de spelers gewonnen heeft." >
+                    ?
+                </button>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col colinsert">
+                <button id="0" onclick="fieldInsert()">c0</button>
+            </div>
+            <div class="col colinsert">
+                <button id="1" onclick="fieldInsert()">c1</button>
+            </div>
+            <div class="col colinsert">
+                <button id="2" onclick="fieldInsert()">c2</button>
+            </div>
+            <div class="col colinsert">
+                <button id="3" onclick="fieldInsert()">c3</button>
+            </div>
+            <div class="col colinsert"> 
+                <button id="4" onclick="fieldInsert()">c4</button>
+            </div>
+            <div class="col colinsert">
+                <button id="5" onclick="fieldInsert()">c5</button>
+            </div>
+            <div class="col colinsert">
+                <button id="6" onclick="fieldInsert()">c6</button>
+            </div>
+        </div>
+        <div class="row">
+            <div id="00" class="col colstyle"></div>
+            <div id="01" class="col colstyle"></div>
+            <div id="02" class="col colstyle"></div>
+            <div id="03" class="col colstyle"></div>
+            <div id="04" class="col colstyle"></div>
+            <div id="05" class="col colstyle"></div>
+            <div id="06" class="col colstyle"></div>
+        </div>
+        <div class="row">
+            <div id="10" class="col colstyle"></div>
+            <div id="11" class="col colstyle"></div>
+            <div id="12" class="col colstyle"></div>
+            <div id="13" class="col colstyle"></div>
+            <div id="14" class="col colstyle"></div>
+            <div id="15" class="col colstyle"></div>
+            <div id="16" class="col colstyle"></div>
+        </div>
+        <div class="row">
+            <div id="20" class="col colstyle"></div>
+            <div id="21" class="col colstyle"></div>
+            <div id="22" class="col colstyle"></div>
+            <div id="23" class="col colstyle"></div>
+            <div id="24" class="col colstyle"></div>
+            <div id="25" class="col colstyle"></div>
+            <div id="26" class="col colstyle"></div>
+        </div>
+        <div class="row">
+            <div id="30" class="col colstyle"></div>
+            <div id="31" class="col colstyle"></div>
+            <div id="32" class="col colstyle"></div>
+            <div id="33" class="col colstyle"></div>
+            <div id="34" class="col colstyle"></div>
+            <div id="35" class="col colstyle"></div>
+            <div id="36" class="col colstyle"></div>
+        </div>
+        <div class="row">
+            <div id="40" class="col colstyle"></div>
+            <div id="41" class="col colstyle"></div>
+            <div id="42" class="col colstyle"></div>
+            <div id="43" class="col colstyle"></div>
+            <div id="44" class="col colstyle"></div>
+            <div id="45" class="col colstyle"></div>
+            <div id="46" class="col colstyle"></div>
+        </div>
+        <div class="row">
+            <div id="50" class="col colstyle"></div>
+            <div id="51" class="col colstyle"></div>
+            <div id="52" class="col colstyle"></div>
+            <div id="53" class="col colstyle"></div>
+            <div id="54" class="col colstyle"></div>
+            <div id="55" class="col colstyle"></div>
+            <div id="56" class="col colstyle"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

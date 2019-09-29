@@ -28,9 +28,6 @@
     border: 1px solid black;
 }
 
-
-
-/* Style gestolen van internet voor de jumbotron: */
 .jumbotron { 
     padding: 2rem 1rem;
     margin-bottom: 2rem;
@@ -41,3 +38,19 @@
     background: linear-gradient(to bottom, rgba(30,87,153,1) 0%,rgba(30,87,153,0.54) 46%,rgba(125,185,232,0.18) 82%,rgba(125,185,232,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#007db9e8',GradientType=0 ); /* IE6-9 */
   }
+
+#winner {
+    /* background-image: linear-gradient(to left, red, orange); */
+    /* background-image: linear-gradient(to left, yellow, orange); */
+    font-weight: bold;
+    font-size: 18px;
+    animation:blinkingText 1.0s infinite;
+}
+
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: transparent; }
+    50%{    color: transparent; }
+    99%{    color: transparent;  }
+    100%{   color: #000;    }
+}

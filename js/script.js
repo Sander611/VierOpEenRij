@@ -67,15 +67,21 @@ function checkUitslag(field, player){
     
     //checken welke lijn 4 op een rij heeft, anders doorgaan met spel
     if(Vteller >= 4){
-        alert(player + " heeft gewonnen! 4 op een rij verticaal.")
+        // alert(player + " heeft gewonnen! 4 op een rij verticaal.")
+        document.getElementById("winner").innerHTML = "Gefeliciteerd " + player + " je hebt gewonnen met een verticale 4 op een rij!"
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         disableButtons();
     }
     else if(Hteller >= 4) {
-        alert(player + " heeft gewonnen! 4 op een rij horizontaal.")
+        // alert(player + " heeft gewonnen! 4 op een rij horizontaal.")
+        document.getElementById("winner").innerHTML = "Gefeliciteerd " + player + " je hebt gewonnen met een horizontale 4 op een rij!"
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         disableButtons();
     }
     else if (Dteller1 >= 4 || Dteller2 >= 4){
-        alert(player + " heeft gewonnen! 4 op een rij diagonaal.")
+        // alert(player + " heeft gewonnen! 4 op een rij diagonaal.")
+        document.getElementById("winner").innerHTML = "Gefeliciteerd " + player + " je hebt gewonnen met een diagonale 4 op een rij!"
+        window.scrollTo({ top: 0, behavior: 'smooth' });
         disableButtons();
     }
     else{
@@ -183,6 +189,7 @@ function restart(){
         document.getElementById(key).style.backgroundColor = "";
     })
     myArray = {};
+    document.getElementById("winner").innerHTML = "";
     document.getElementById("player").innerHTML = "Player1";
     document.getElementById("player").style.backgroundColor = "yellow";
 

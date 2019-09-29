@@ -23,21 +23,25 @@
         </div>
         <div class="row">
             <div class="col col-sm">
+                <p>Aan de beurt:</p>
                 <p id="player">Player1</p>
             </div>
         
             <div class="col col-sm">
                 <button onclick="restart()">Restart</button>
+                <button data-toggle="tooltip" data-placement="left" title="Links staat de Speler die aan de beurt is met zijn kleur. 4 op een rij kan zowel horizontaal,verticaal als diagonaal worden behaald. Met de restart button kan het spel teruggezet worden op de beginwaarden. De speler die aan de beurt is kan zijn beurt innen door op een van de 'c0, c1 ,c2 etc.' knoppen te klikken. Deze knoppen zullen disabled worden wanneer een van de spelers gewonnen heeft." >
+                        ?
+                </button>
             </div>
 
-            <div class="col col-sm">
+            <!-- <div class="col col-sm">
                 <button data-toggle="tooltip" data-placement="left" title="Links staat de Speler die aan de beurt is met zijn kleur. 4 op een rij kan zowel horizontaal,verticaal als diagonaal worden behaald. Met de restart button kan het spel teruggezet worden op de beginwaarden. De speler die aan de beurt is kan zijn beurt innen door op een van de 'c0, c1 ,c2 etc.' knoppen te klikken. Deze knoppen zullen disabled worden wanneer een van de spelers gewonnen heeft." >
                     ?
                 </button>
-            </div>
+            </div> -->
         </div>
         <hr>
-        <div class="row">
+        <div class="row invoervelden">
             <div class="col colinsert">
                 <button id="0" onclick="fieldInsert()">c0</button>
             </div>

@@ -1,6 +1,8 @@
 .colstyle {
     border: 1px solid black;
     height: 100px;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
 }
 
 .colinsert {

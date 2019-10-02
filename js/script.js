@@ -116,7 +116,6 @@ function fieldSelector(id){
     // veld id linken aan speler in array
     myArray[fieldId] = player;
 
-
     // veld kleur geven van player (geel is player1 of rood is player2)
     // wisselen van speler
     if (player == "Player1"){

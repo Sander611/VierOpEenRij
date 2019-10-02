@@ -1,4 +1,79 @@
 var myArray = {};
+var naamSpeler1;
+var naamSpeler2;
+var kleurSpeler1;
+var kleurSpeler2;
+var hideOrShow = "Hide";
+
+
+function storeValues(){
+    if(hideOrShow == "Hide"){
+        console.log("Hide")
+        naamSpeler1 = document.getElementById("name1").value;
+        naamSpeler2 = document.getElementById("name2").value;
+        kleurSpeler1 = document.getElementById("kleur1").value;
+        kleurSpeler2 = document.getElementById("kleur2").value;
+    
+        document.getElementById("playerField").style.display = "none";
+    
+        document.getElementById("nameSaver").innerText="Change names and restart.";
+        document.getElementById("playField").style.display = "block";
+
+        //set start values:
+        document.getElementById("player").style.backgroundColor = kleurSpeler1;
+        document.getElementById("player").innerHTML = naamSpeler1;
+
+        hideOrShow = "Show";
+        
+        //open field with new values
+    }
+    else{
+        console.log("Show")
+        //hide field
+        document.getElementById("playerField").style.display = "block";
+        document.getElementById("playField").style.display = "none";
+        //reset field
+        restart();
+        document.getElementById("nameSaver").innerText="Opslaan en beginnen!";
+        hideOrShow = "Hide";
+    }
+
+}
+
+function highlightField(turnValue){
+// deze functie highlight waar de speler zijn zet zal vallen.
+    var columnId = event.srcElement.id;
+    for(var row=5; row > -1; row--){
+        var newId = row + columnId;
+
+        var player = document.getElementById("player").innerText;
+
+        if (player == naamSpeler1){
+            player = "Player1";
+        }else{
+            player = "Player2";
+        }
+
+        // console.log(player);
+
+        if (newId in myArray){
+            continue;
+        }
+        else{
+            if(player == "Player1" && turnValue == "True"){
+                document.getElementById(newId).style.backgroundColor = "lightyellow";
+            }
+            else if(player == "Player2" && turnValue == "True"){
+                document.getElementById(newId).style.backgroundColor = "lightcoral";
+            }
+            else {
+                document.getElementById(newId).style.backgroundColor = "";
+            }
+            
+            break;
+        }
+    }
+}
 
 function fieldInsert(){
 // deze functie genereerd het ID van het veld afhankelijk van in welke kolom de speler zijn zet geplaatst heeft.
@@ -25,6 +100,16 @@ function fieldSelector(id){
     // player opvragen
     var player = document.getElementById("player").innerText;
 
+    console.log(player);
+
+    if (player == naamSpeler1){
+        player = "Player1";
+    }else{
+        player = "Player2";
+    }
+
+    console.log(player);
+
     // aangeklikte veld (bijv. "05", oftewel het vakje linksonderin, "00" is dan weer linksbovenin)
     var fieldId = id;
 
@@ -35,13 +120,13 @@ function fieldSelector(id){
     // veld kleur geven van player (geel is player1 of rood is player2)
     // wisselen van speler
     if (player == "Player1"){
-        document.getElementById(fieldId).style.backgroundColor = "yellow";
-        document.getElementById("player").innerHTML = "Player2";
-        document.getElementById("player").style.backgroundColor = "red";
+        document.getElementById(fieldId).style.backgroundColor = kleurSpeler1;
+        document.getElementById("player").innerHTML = naamSpeler2;
+        document.getElementById("player").style.backgroundColor = kleurSpeler2;
     } else {
-        document.getElementById(fieldId).style.backgroundColor = "red";
-        document.getElementById("player").innerHTML = "Player1";
-        document.getElementById("player").style.backgroundColor = "yellow";
+        document.getElementById(fieldId).style.backgroundColor = kleurSpeler2;
+        document.getElementById("player").innerHTML = naamSpeler1;
+        document.getElementById("player").style.backgroundColor = kleurSpeler1;
     }
 
     // checken of er 4 op een rij is bij deze beurt.
@@ -66,6 +151,11 @@ function checkUitslag(field, player){
 
     
     //checken welke lijn 4 op een rij heeft, anders doorgaan met spel
+    if(player == "Player1"){
+        player = naamSpeler1;
+    }else {
+        player = naamSpeler2;
+    }
     if(Vteller >= 4){
         // alert(player + " heeft gewonnen! 4 op een rij verticaal.")
         document.getElementById("winner").innerHTML = "Gefeliciteerd " + player + " je hebt gewonnen met een verticale 4 op een rij!"
@@ -190,8 +280,8 @@ function restart(){
     })
     myArray = {};
     document.getElementById("winner").innerHTML = "";
-    document.getElementById("player").innerHTML = "Player1";
-    document.getElementById("player").style.backgroundColor = "yellow";
+    document.getElementById("player").innerHTML = naamSpeler1;
+    document.getElementById("player").style.backgroundColor = kleurSpeler1;
 
     for(x=0; x<7; x++){
         document.getElementById(x).disabled = false;

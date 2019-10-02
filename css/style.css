@@ -1,3 +1,8 @@
+
+#playField {
+    display: none;
+}
+
 .colstyle {
     border: 1px solid black;
     height: 100px;

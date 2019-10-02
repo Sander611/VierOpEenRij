@@ -100,15 +100,11 @@ function fieldSelector(id){
     // player opvragen
     var player = document.getElementById("player").innerText;
 
-    console.log(player);
-
     if (player == naamSpeler1){
         player = "Player1";
     }else{
         player = "Player2";
     }
-
-    console.log(player);
 
     // aangeklikte veld (bijv. "05", oftewel het vakje linksonderin, "00" is dan weer linksbovenin)
     var fieldId = id;

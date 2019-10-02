@@ -61,10 +61,10 @@ function highlightField(turnValue){
         }
         else{
             if(player == "Player1" && turnValue == "True"){
-                document.getElementById(newId).style.backgroundColor = "lightyellow";
+                document.getElementById(newId).style.backgroundColor = kleurSpeler1;
             }
             else if(player == "Player2" && turnValue == "True"){
-                document.getElementById(newId).style.backgroundColor = "lightcoral";
+                document.getElementById(newId).style.backgroundColor = kleurSpeler2;
             }
             else {
                 document.getElementById(newId).style.backgroundColor = "";
